@@ -18,6 +18,8 @@ interface SidebarProps {
   activeAccount: Account | null;
   onOpenAccountModal: () => void;
   runningServerCount: number;
+  hasAccount?: boolean;
+  hasProfile?: boolean;
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({
@@ -26,7 +28,20 @@ export const Sidebar: React.FC<SidebarProps> = ({
   activeAccount,
   onOpenAccountModal,
   runningServerCount,
+  hasAccount = true,
+  hasProfile = true,
 }) => {
+  const isTabLocked = (tabId: NavTab): { locked: boolean; reason?: string } => {
+    if (!hasAccount) {
+      if (tabId === 'play') return { locked: true, reason: 'Create or sign in to an account first' };
+      if (tabId === 'profiles') return { locked: true, reason: 'Create an account before managing profiles' };
+    }
+    if (hasAccount && !hasProfile) {
+      if (tabId === 'play') return { locked: true, reason: 'Create a profile in PROFILES first' };
+    }
+    return { locked: false };
+  };
+
   const navItems = [
     { id: 'play' as NavTab, label: 'PLAY', icon: Play },
     { id: 'profiles' as NavTab, label: 'PROFILES', icon: FolderOpen },
@@ -56,20 +71,35 @@ export const Sidebar: React.FC<SidebarProps> = ({
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = currentTab === item.id;
+            const { locked, reason } = isTabLocked(item.id);
+
             return (
               <button
                 key={item.id}
-                onClick={() => onTabChange(item.id)}
-                title={item.label}
+                onClick={() => {
+                  if (locked) {
+                    if (!hasAccount) onTabChange('account');
+                    else if (!hasProfile) onTabChange('profiles');
+                    return;
+                  }
+                  onTabChange(item.id);
+                }}
+                disabled={locked}
+                title={locked ? reason : item.label}
                 className={`relative w-full flex flex-col items-center justify-center px-2 py-3 rounded-xl font-medium text-[10px] transition-all duration-150 ${
-                  isActive
+                  locked
+                    ? 'opacity-35 cursor-not-allowed hover:bg-transparent text-gray-500'
+                    : isActive
                     ? 'bg-orange-600 text-white shadow-lg shadow-orange-600/40'
                     : 'text-gray-400 hover:bg-gray-800/50 hover:text-white'
                 }`}
               >
-                <Icon className={`w-6 h-6 mb-1 ${isActive ? 'text-white' : 'text-gray-400'}`} />
+                <Icon className={`w-6 h-6 mb-1 ${locked ? 'text-gray-600' : isActive ? 'text-white' : 'text-gray-400'}`} />
                 <span className="uppercase tracking-tight">{item.label}</span>
-                {item.badge && (
+                {locked && (
+                  <span className="absolute top-1.5 right-1.5 text-[9px]">🔒</span>
+                )}
+                {item.badge && !locked && (
                   <span
                     className={`absolute -top-1 -right-1 text-[9px] px-1.5 py-0.5 rounded-full font-bold ${
                       item.badgeColor || 'bg-blue-500 text-white'

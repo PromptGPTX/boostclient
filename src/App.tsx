@@ -77,6 +77,18 @@ export const App: React.FC = () => {
         document.documentElement.setAttribute('data-theme', sett.theme || 'aternos-dark');
       }
       setMojangVersions(vers || []);
+
+      const userHasAccount = (accs && accs.length > 0) || !!activeAcc;
+      const userHasProfile = profs && profs.length > 0;
+
+      // Onboarding Gate: New user starts on Account page until they create an account
+      if (!userHasAccount) {
+        setCurrentTab('account');
+      } else if (!userHasProfile) {
+        setCurrentTab('profiles');
+      } else {
+        setCurrentTab('play');
+      }
     } catch (err) {
       console.error('Failed to load initial data:', err);
     }
@@ -95,6 +107,7 @@ export const App: React.FC = () => {
       setServerLogs((prev) => {
         const existing = prev[serverId] || [];
         const updated = [...existing, line];
+        // Keep max 500 lines
         return { ...prev, [serverId]: updated.slice(-500) };
       });
     });
@@ -153,6 +166,8 @@ export const App: React.FC = () => {
     if (activeProfile?.id === saved.id || !activeProfile) {
       setActiveProfile(saved);
     }
+    // Automatically transition to PLAY once they create their first profile!
+    setCurrentTab('play');
   };
 
   const handleDeleteProfile = async (id: string) => {
@@ -253,6 +268,13 @@ export const App: React.FC = () => {
     const accs = await window.electronAPI.getAccounts();
     setAccounts(accs);
     setActiveAccount(acc);
+    setAccountModalOpen(false);
+    // If user was on account page and has no profiles, lead them to profiles
+    if (profiles.length === 0) {
+      setCurrentTab('profiles');
+    } else {
+      setCurrentTab('play');
+    }
   };
 
   const handleStartMicrosoftLogin = async () => {
@@ -262,6 +284,11 @@ export const App: React.FC = () => {
     setAccounts(accs);
     setActiveAccount(active);
     setAccountModalOpen(false);
+    if (profiles.length === 0) {
+      setCurrentTab('profiles');
+    } else {
+      setCurrentTab('play');
+    }
   };
 
   const handleRemoveAccount = async (id: string) => {
@@ -288,6 +315,7 @@ export const App: React.FC = () => {
         currentTab={currentTab}
         onTabChange={(tab) => {
           setCurrentTab(tab);
+          // If leaving server dashboard, keep or clear active server
           if (tab !== 'servers') {
             setActiveServerId(null);
           }
@@ -295,6 +323,8 @@ export const App: React.FC = () => {
         activeAccount={activeAccount}
         onOpenAccountModal={() => setAccountModalOpen(true)}
         runningServerCount={runningServerCount}
+        hasAccount={accounts.length > 0 || !!activeAccount}
+        hasProfile={profiles.length > 0}
       />
 
       {/* Main Content Area */}
@@ -303,10 +333,7 @@ export const App: React.FC = () => {
           <PlayView
             profiles={profiles}
             activeProfile={activeProfile}
-            onSelectProfile={(id) => {
-              const p = profiles.find((item) => item.id === id);
-              if (p) handleSelectProfile(p);
-            }}
+            onSelectProfile={handleSelectProfile}
             onLaunchGame={handleLaunchGame}
             onKillGame={handleKillGame}
             gameStatus={gameStatus}
@@ -324,10 +351,7 @@ export const App: React.FC = () => {
           <ProfileList
             profiles={profiles}
             activeProfileId={activeProfile?.id || null}
-            onSelectProfile={(id) => {
-              const p = profiles.find((item) => item.id === id);
-              if (p) handleSelectProfile(p);
-            }}
+            onSelectProfile={handleSelectProfile}
             onEditProfile={(p) => {
               setProfileToEdit(p);
               setProfileModalOpen(true);
