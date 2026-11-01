@@ -1,0 +1,83 @@
+{
+  "client": {
+    "version": "1.2.0",
+    "name": "BoostClient",
+    "releaseDate": "2026-11-01",
+    "downloadUrl": "https://github.com/PromptGPTX/boostclient/releases/download/v1.2.0/boostclient-setup-1.2.0.exe",
+    "directSetupUrl": "https://github.com/PromptGPTX/boostclient/releases/latest/download/boostclient-setup.exe",
+    "changelog": [
+      "FastClient UI overhaul: Dark gaming theme with orange accents",
+      "Account-first onboarding gating (Account -> Profile -> Play)",
+      "Wardrobe system with 3 skin slots & animated GIF cape support",
+      "Multiplayer skin & animated cape cross-sync via BoostX mod",
+      "On-demand GitHub mod and server asset distribution",
+      "Aternos-inspired self-hosted server manager with 10x Performance Engine",
+      "Zero-config Playit.gg and Cloudflare tunneling"
+    ]
+  },
+  "mods": {
+    "fabric": {
+      "1.21.1": {
+        "filename": "boostx-1.21.1.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.21.1.jar",
+        "version": "1.2.0"
+      },
+      "1.20.4": {
+        "filename": "boostx-1.20.4.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.20.4.jar",
+        "version": "1.2.0"
+      },
+      "1.20.1": {
+        "filename": "boostx-1.20.1.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.20.1.jar",
+        "version": "1.2.0"
+      },
+      "1.19.4": {
+        "filename": "boostx-1.19.4.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.19.4.jar",
+        "version": "1.2.0"
+      },
+      "1.18.2": {
+        "filename": "boostx-1.18.2.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.18.2.jar",
+        "version": "1.2.0"
+      }
+    },
+    "forge": {
+      "1.20.4": {
+        "filename": "boostx-1.20.4.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/forge/boostx-1.20.4.jar",
+        "version": "1.2.0"
+      },
+      "1.20.1": {
+        "filename": "boostx-1.20.1.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/forge/boostx-1.20.1.jar",
+        "version": "1.2.0"
+      },
+      "1.19.4": {
+        "filename": "boostx-1.19.4.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/forge/boostx-1.19.4.jar",
+        "version": "1.2.0"
+      },
+      "1.18.2": {
+        "filename": "boostx-1.18.2.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/forge/boostx-1.18.2.jar",
+        "version": "1.2.0"
+      }
+    }
+  },
+  "plugins": {
+    "paper": {
+      "1.0.0": {
+        "filename": "boostserver-paper-1.0.0.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/plugins/boostserver-paper-1.0.0.jar",
+        "features": [
+          "10x TPS stabilizer",
+          "Async chunk packet compression",
+          "Boat & piston ghost block glitch fixes",
+          "Multiplayer animated GIF cape and custom skin relay"
+        ]
+      }
+    }
+  }
+}

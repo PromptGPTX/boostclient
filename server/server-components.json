@@ -1,0 +1,59 @@
+{
+  "version": "1.2.0",
+  "platforms": {
+    "paper": {
+      "name": "PaperMC",
+      "type": "server",
+      "recommendedVersion": "1.20.4",
+      "supportedVersions": ["1.21.6", "1.21.1", "1.20.6", "1.20.4", "1.20.2", "1.20.1", "1.19.4", "1.18.2"],
+      "apiEndpoint": "https://api.papermc.io/v2/projects/paper",
+      "features": ["High performance", "Bukkit/Spigot/Paper plugins", "Anti-tick lag", "Async chunks"]
+    },
+    "purpur": {
+      "name": "Purpur",
+      "type": "server",
+      "recommendedVersion": "1.20.4",
+      "supportedVersions": ["1.21.1", "1.20.4", "1.20.2", "1.20.1", "1.19.4", "1.18.2"],
+      "apiEndpoint": "https://api.purpurmc.org/v2/purpur",
+      "features": ["Maximum customization", "Ridable mobs", "Extreme TPS optimization"]
+    },
+    "fabric": {
+      "name": "Fabric Server",
+      "type": "server",
+      "recommendedVersion": "1.20.4",
+      "supportedVersions": ["1.21.1", "1.20.4", "1.20.1", "1.19.4", "1.18.2"],
+      "apiEndpoint": "https://meta.fabricmc.net/v2/versions/loader",
+      "features": ["Modded server support", "Sodium/Lithium compatibility", "Fast loading"]
+    },
+    "velocity": {
+      "name": "Velocity Proxy",
+      "type": "proxy",
+      "recommendedVersion": "3.3.0",
+      "supportedVersions": ["3.3.0", "3.2.0"],
+      "apiEndpoint": "https://api.papermc.io/v2/projects/velocity",
+      "features": ["Multi-server network proxy", "DDoS mitigation", "Modern packet architecture"]
+    }
+  },
+  "defaultConfigurations": {
+    "aikarsFlags": [
+      "-XX:+UseG1GC",
+      "-XX:+ParallelRefProcEnabled",
+      "-XX:MaxGCPauseMillis=200",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:+DisableExplicitGC",
+      "-XX:+AlwaysPreTouch",
+      "-XX:G1NewSizePercent=30",
+      "-XX:G1MaxNewSizePercent=40",
+      "-XX:G1HeapRegionSize=8M",
+      "-XX:G1ReservePercent=20",
+      "-XX:G1HeapWastePercent=5",
+      "-XX:G1MixedGCCountTarget=4",
+      "-XX:InitiatingHeapOccupancyPercent=15",
+      "-XX:G1MixedGCLiveThresholdPercent=90",
+      "-XX:G1RSetUpdatingPauseTimePercent=5",
+      "-XX:SurvivorRatio=32",
+      "-XX:+PerfDisableSharedMem",
+      "-XX:MaxTenuringThreshold=1"
+    ]
+  }
+}
