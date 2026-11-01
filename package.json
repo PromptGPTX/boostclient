@@ -1,0 +1,93 @@
+{
+  "name": "boostclient",
+  "version": "1.2.0",
+  "description": "BoostClient - 100% free Minecraft Launcher & Aternos-Style Server Manager with 10x Performance Engine",
+  "main": "dist-electron/electron/main.js",
+  "scripts": {
+    "dev": "concurrently -k \"vite\" \"wait-on tcp:5173 && cross-env NODE_ENV=development electron .\"",
+    "build:electron": "tsc -p tsconfig.electron.json",
+    "build:renderer": "vite build",
+    "build": "npm run build:electron && npm run build:renderer",
+    "start": "electron dist-electron",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "keywords": [
+    "minecraft",
+    "launcher",
+    "server-manager",
+    "aternos",
+    "playit",
+    "modrinth",
+    "curseforge",
+    "boostclient",
+    "10x-performance"
+  ],
+  "author": "Antigravity",
+  "license": "MIT",
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.453.0",
+    "pidusage": "^3.0.2",
+    "tailwind-merge": "^2.5.4"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.5",
+    "@types/node": "^22.7.5",
+    "@types/pidusage": "^2.0.5",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.2",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.0.1",
+    "cross-env": "^7.0.3",
+    "electron": "^32.1.2",
+    "electron-builder": "^24.13.3",
+    "postcss": "^8.4.47",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.8",
+    "wait-on": "^8.0.1"
+  },
+  "build": {
+    "productName": "BoostClient",
+    "appId": "com.boostclient.app",
+    "directories": {
+      "output": "dist-release"
+    },
+    "files": [
+      "dist-electron/**/*",
+      "dist/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        },
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "assets/icon.ico",
+      "signingHashAlgorithms": ["sha256"],
+      "sign": null
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "BoostClient",
+      "artifactName": "boostclient-setup-${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "boostclient-${version}.${ext}"
+    }
+  }
+}
