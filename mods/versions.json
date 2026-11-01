@@ -1,0 +1,72 @@
+{
+  "version": "1.2.0",
+  "updatedAt": "2026-11-01T04:55:00Z",
+  "minecraftVersions": [
+    "1.21.6",
+    "1.21.1",
+    "1.20.6",
+    "1.20.4",
+    "1.20.1",
+    "1.19.4",
+    "1.19.2",
+    "1.18.2"
+  ],
+  "categories": {
+    "performance": [
+      {
+        "id": "boostx",
+        "name": "BoostX Client Suite",
+        "description": "All-in-one 100+ module FPS boost and HUD client mod",
+        "versions": {
+          "1.20.4": "https://github.com/PromptGPTX/boostclient/releases/download/v1.2.0/boostx-1.20.4-fabric.jar",
+          "1.20.1": "https://github.com/PromptGPTX/boostclient/releases/download/v1.2.0/boostx-1.20.1-fabric.jar",
+          "1.21.1": "https://github.com/PromptGPTX/boostclient/releases/download/v1.2.0/boostx-1.21.1-fabric.jar"
+        }
+      },
+      {
+        "id": "sodium",
+        "name": "Sodium",
+        "description": "Modern rendering engine replacement",
+        "dependencies": ["fabric-api"]
+      },
+      {
+        "id": "lithium",
+        "name": "Lithium",
+        "description": "General-purpose game physics and tick optimization"
+      },
+      {
+        "id": "ferrite-core",
+        "name": "FerriteCore",
+        "description": "Memory usage reduction for Minecraft"
+      },
+      {
+        "id": "immediately-fast",
+        "name": "ImmediatelyFast",
+        "description": "Immediate mode rendering optimization"
+      },
+      {
+        "id": "entity-culling",
+        "name": "Entity Culling",
+        "description": "Skip rendering hidden entities behind walls"
+      }
+    ],
+    "visual": [
+      {
+        "id": "iris",
+        "name": "Iris Shaders",
+        "description": "Modern shader pack support with Sodium compatibility",
+        "dependencies": ["sodium"]
+      },
+      {
+        "id": "continuity",
+        "name": "Continuity",
+        "description": "Connected textures mod for Fabric"
+      },
+      {
+        "id": "indium",
+        "name": "Indium",
+        "description": "Sodium compatibility layer for Fabric Rendering API"
+      }
+    ]
+  }
+}

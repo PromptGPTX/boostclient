@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BoostClient Documentation - 100% Free Minecraft Suite</title>
+  <style>
+    :root {
+      --bg: #0a0b0d;
+      --card: #13151b;
+      --border: #1f2330;
+      --orange: #f97316;
+      --orange-hover: #ea580c;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --blue: #3b82f6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: rgba(10, 11, 13, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .logo-badge {
+      background: linear-gradient(135deg, #f97316, #ea580c);
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: white;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--text);
+    }
+    .btn-discord {
+      background: #5865f2;
+      color: white !important;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .btn-discord:hover {
+      background: #4752c4;
+    }
+    .hero {
+      padding: 4rem 2rem;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #f97316, #fb923c, #fdba74);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(249, 115, 22, 0.4);
+    }
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+    pre {
+      background: #000;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      overflow-x: auto;
+      font-size: 0.85rem;
+      color: #38bdf8;
+      margin: 1rem 0;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">
+      <span>⚡ BoostClient</span>
+      <span class="logo-badge">v1.2.0</span>
+    </a>
+    <div class="nav-links">
+      <a href="#getting-started">Getting Started</a>
+      <a href="#boostx">BoostX Mod</a>
+      <a href="#servers">Server Hosting</a>
+      <a href="#wardrobe">Wardrobe</a>
+      <a href="https://discord.gg/TUTvzCmtyD" target="_blank" class="btn-discord">Join Discord</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <h1>BoostClient Documentation</h1>
+    <p>100% Free Minecraft Client with 10x Performance Engine, Wardrobe Customization, and Zero-Port Server Hosting.</p>
+  </div>
+
+  <div class="container">
+    <div class="grid">
+      <div class="card">
+        <h3>🚀 10x Performance Engine</h3>
+        <p>Aikar's optimized G1GC flags, memory optimization, and curated Sodium + Lithium + FerriteCore presets for micro-stutter-free 240+ FPS.</p>
+      </div>
+      <div class="card">
+        <h3>⚡ BoostX All-in-One Mod</h3>
+        <p>100+ modules: Keystrokes, CPS, FPS Counter, Fullbright, Freelook, Waypoints, Custom Crosshairs, and dynamic Right-Shift GUI.</p>
+      </div>
+      <div class="card">
+        <h3>🎽 Wardrobe & GIF Capes</h3>
+        <p>3-slot skin library and animated GIF cape system. BoostClient and BoostX mod users see each other's custom skins and capes in multiplayer!</p>
+      </div>
+      <div class="card">
+        <h3>🌐 Zero-Port Server Hosting</h3>
+        <p>Aternos-style dashboard powered by Playit.gg and Cloudflare Tunnels. Host servers on your PC without router port-forwarding.</p>
+      </div>
+    </div>
+
+    <h2 id="getting-started" class="section-title">Getting Started</h2>
+    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+      BoostClient provides both offline (cracked) and Microsoft Xbox Live OAuth authentication. Create a profile, pick your Minecraft version (1.18.2 to 26.3+), and hit <strong>LAUNCH GAME</strong>.
+    </p>
+
+    <h2 id="boostx" class="section-title">BoostX In-Game Controls</h2>
+    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+      When launching any profile with BoostX installed, use the following default hotkeys:
+    </p>
+    <pre>Right-Shift  -> Open BoostX Client Menu (100+ Modules)
+B            -> Fullbright Toggle
+C            -> Zoom
+F            -> Freelook (Perspective Camera)
+F9           -> Chunk Borders & Light Overlay</pre>
+
+    <h2 id="servers" class="section-title">Aternos-Style Server Hosting</h2>
+    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+      BoostClient automatically downloads Paper, Purpur, or Fabric server JARs on-demand and manages tunneling so friends can join using a public Playit link or custom Cloudflare domain.
+    </p>
+
+    <h2 id="community" class="section-title">Need Help?</h2>
+    <p style="color: var(--text-muted);">
+      Join our active Discord community: <a href="https://discord.gg/TUTvzCmtyD" style="color: var(--orange); font-weight: bold; text-decoration: none;">discord.gg/TUTvzCmtyD</a>
+    </p>
+  </div>
+
+  <footer>
+    <p>BoostClient is not affiliated with Mojang Studios or Microsoft. Built with 💜 by the BoostClient Community.</p>
+  </footer>
+</body>
+</html>
