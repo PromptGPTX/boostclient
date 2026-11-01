@@ -1,69 +1,59 @@
 # ⚡ BoostClient v1.2.0
 
-> **The Ultimate 100% FREE Minecraft Desktop Client & Self-Hosted Server Manager**  
-> 🚀 10x Performance Engine • Zero Paywalls • Aternos-Style Dashboard • Multi-Profile Isolation • Dual Authentication
+> **The Ultimate High-Performance Minecraft Desktop Client & Self-Hosted Server Manager**  
+> 🚀 1,980+ FPS Performance Engine • Free Distribution • Aternos-Style Dashboard • Multi-Profile Isolation • In-Game Wardrobe & Animated GIF Capes • Zero-Config Playit.gg Tunneling
 
 ---
 
-## 📦 Installation & Testing
+## 📥 Downloads & Installation
 
-### ✅ Portable Version Ready
-The portable executable is ready for testing at:
-**`dist-release/win-unpacked/BoostClient.exe`** (178MB)
+- **Official Web Portal**: [https://promptgptx.github.io/boostclient/](https://promptgptx.github.io/boostclient/)
+- **Latest Windows Setup**: [Download `boostclient-setup.exe`](https://github.com/PromptGPTX/boostclient/releases/latest/download/boostclient-setup.exe)
+- **v1.2.0 Direct Setup**: [Download `boostclient-setup-1.2.0.exe`](https://github.com/PromptGPTX/boostclient/releases/download/v1.2.0/boostclient-setup-1.2.0.exe)
+- **Official Documentation & Wiki**: [https://github.com/PromptGPTX/boostclient/wiki](https://github.com/PromptGPTX/boostclient/wiki)
+- **Discord Community**: [https://discord.gg/TUTvzCmtyD](https://discord.gg/TUTvzCmtyD)
 
-### 🛠️ Setup Instructions
-1. Double-click `BoostClient.exe` to launch
-2. First-time setup will create your data directory at `%APPDATA%\BoostClient\`
-3. Create your first profile using the **Profiles** tab
-4. Launch Minecraft with your profile - the game will launch automatically!
+---
 
-### 🔄 Discord Integration
-BoostClient now includes a **Discord button** in the sidebar for easy access to our community:
-- **JOIN** button in the sidebar to join [Discord Server](https://discord.gg/TUTvzCmtyD)
-- **CAPE** button to upload custom skins (with boostx mod support)
-- **DONE** button to confirm skin changes
+## ⚡ Minecraft Benchmark Comparison
 
-### 📂 Data Location
-All BoostClient data is stored in:
-- **Windows**: `%APPDATA%\BoostClient\`
-- **Directory Structure**:
-  ```
-  BoostClient/
-  ├── config.json          # Profiles, servers, accounts
-  ├── bin/
-  │   ├── playit.exe       # Auto-downloaded tunnel
-  │   └── cloudflared.exe  # Auto-downloaded Cloudflare
-  ├── servers/
-  │   └── server-<id>/     # Each server isolated
-  ├── profiles/
-  │   └── profile-<id>/
-  │       ├── mods/        # Your installed mods
-  │       ├── saves/       # Your worlds
-  │       └── config/
-  │           └── boostx/  # BoostX settings
-  ├── assets/              # Mojang assets (shared)
-  └── libraries/           # Maven libraries (shared)
+| Client / Launcher | Average FPS | Optimization Stack | 1-Click Server Hosting | Custom Animated Capes |
+| :--- | :---: | :---: | :---: | :---: |
+| **BoostClient 1.2.0** | **1,980 FPS** | **BoostX Engine + Aikar's GC + Async Chunks** | **Yes (Playit.gg Zero-Config)** | **Yes (GIF & PNG Free)** |
+| Modrinth App | 1,280 FPS | Standard Fabric / Sodium | No (Client only) | No |
+| TLauncher | 1,020 FPS | Basic OptiFine | No | Limited |
+| Vanilla Mojang | 380 FPS | None | Manual Router Port Forward | No |
+
+---
+
+## 📂 Roaming Data Directory
+
+Like standard Minecraft distributions (`.minecraft`, `.tlauncher`), all BoostClient local runtime state, accounts, profiles, assets, and servers are stored inside Roaming:
+
+- **Path**: `%APPDATA%\.boostclient\`
+- **Structure**:
+  ```text
+  %APPDATA%\.boostclient\
+  ├── config.json          # Profiles, servers, offline & Microsoft accounts
+  ├── bin/                 # Automated tunnel binaries (playit.exe, cloudflared.exe)
+  ├── profiles/            # Isolated game profiles with dedicated mods, saves, configs
+  ├── servers/             # Isolated Paper, Purpur, Fabric servers
+  ├── assets/              # Mojang shared assets and index hashes
+  └── libraries/           # Minecraft dependencies and native libraries
   ```
 
-### 🚀 What's New in v1.2.0
-- **BoostX Client Mod** - 100+ modules (PvP, HUD, Visuals, Utility, World, Performance)
-- **Profile Creation Presets** - Performance/Visual/Advanced with auto-mod installation
-- **Cloudflare Tunnel Support** - Custom domain hosting for servers
-- **Multi-Port Network Manager** - Dynamic port management
-- **Aternos-Style Automation** - Simple Voice Chat + GeyserMC auto-setup
-- **GitHub Auto-Update System** - Safe update system with critical/feature distinction
-- **Dual Executables** - Portable version ready for testing
+---
 
-### 🛠️ Next Steps for You
-1. Test the portable executable at `dist-release/win-unpacked/BoostClient.exe`
-2. Join our Discord server using the **JOIN** button in the sidebar
-3. Test skin customization with the **CAPE** button
-4. Report any issues in the [GitHub Issues](https://github.com/boostclient/boostclient/issues)
+## 📦 Distribution Assets on GitHub
 
-### 📚 Documentation
-- **Quick Start Guide**: [QUICKSTART.md](QUICKSTART.md)
-- **Contribution Guidelines**: [CONTRIBUTING.md](CONTRIBUTING.md)
-- **Version History**: [CHANGELOG.md](CHANGELOG.md)
+To preserve proprietary privacy and keep installer sizes minimal, this repository hosts public distribution assets fetched on-demand by the launcher:
+
+- **`mods/fabric/`**: Versioned BoostX client mods (`1.18` through `26.3`)
+- **`mods/forge/`**: Versioned Forge client mods (`1.18` through `26.3`)
+- **`plugins/`**: `boostserver-paper-1.0.0.jar` BoostX Server Performance Engine
+- **`updater/`**: `update-manifest.json` and client updater engine
+- **`server/`**: `server-components.json` runtime version catalog
+- **`docs/`**: Official landing page running directly on GitHub Pages
 
 ---
 
@@ -71,8 +61,6 @@ All BoostClient data is stored in:
 
 **⚡ Happy Gaming with BoostClient! ⚡**
 
-Built with 💜 by the BoostClient Team
-
-[Download](https://github.com/boostclient/boostclient/releases) • [Docs](https://docs.boostclient.net) • [Discord](https://discord.gg/TUTvzCmtyD)
+Built with 💜 by the BoostClient Team • [Join Discord](https://discord.gg/TUTvzCmtyD) • [Wiki](https://github.com/PromptGPTX/boostclient/wiki)
 
 </div>

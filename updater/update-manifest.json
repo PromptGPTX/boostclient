@@ -6,7 +6,7 @@
     "downloadUrl": "https://github.com/PromptGPTX/boostclient/releases/download/v1.2.0/boostclient-setup-1.2.0.exe",
     "directSetupUrl": "https://github.com/PromptGPTX/boostclient/releases/latest/download/boostclient-setup.exe",
     "changelog": [
-      "FastClient UI overhaul: Dark gaming theme with orange accents",
+      "BoostClient UI overhaul: Dark gaming theme with orange accents",
       "Account-first onboarding gating (Account -> Profile -> Play)",
       "Wardrobe system with 3 skin slots & animated GIF cape support",
       "Multiplayer skin & animated cape cross-sync via BoostX mod",
@@ -17,14 +17,19 @@
   },
   "mods": {
     "fabric": {
-      "1.21.1": {
-        "filename": "boostx-1.21.1.jar",
-        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.21.1.jar",
+      "1.18": {
+        "filename": "boostx-1.18.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.18.jar",
         "version": "1.2.0"
       },
-      "1.20.4": {
-        "filename": "boostx-1.20.4.jar",
-        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.20.4.jar",
+      "1.19": {
+        "filename": "boostx-1.19.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.19.jar",
+        "version": "1.2.0"
+      },
+      "1.20": {
+        "filename": "boostx-1.20.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.20.jar",
         "version": "1.2.0"
       },
       "1.20.1": {
@@ -32,21 +37,81 @@
         "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.20.1.jar",
         "version": "1.2.0"
       },
-      "1.19.4": {
-        "filename": "boostx-1.19.4.jar",
-        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.19.4.jar",
+      "1.20.2": {
+        "filename": "boostx-1.20.2.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.20.2.jar",
         "version": "1.2.0"
       },
-      "1.18.2": {
-        "filename": "boostx-1.18.2.jar",
-        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.18.2.jar",
+      "1.20.4": {
+        "filename": "boostx-1.20.4.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.20.4.jar",
+        "version": "1.2.0"
+      },
+      "1.20.6": {
+        "filename": "boostx-1.20.6.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.20.6.jar",
+        "version": "1.2.0"
+      },
+      "1.21.1": {
+        "filename": "boostx-1.21.1.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.21.1.jar",
+        "version": "1.2.0"
+      },
+      "1.21.2": {
+        "filename": "boostx-1.21.2.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.21.2.jar",
+        "version": "1.2.0"
+      },
+      "1.21.4": {
+        "filename": "boostx-1.21.4.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.21.4.jar",
+        "version": "1.2.0"
+      },
+      "1.21.8": {
+        "filename": "boostx-1.21.8.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.21.8.jar",
+        "version": "1.2.0"
+      },
+      "1.21.11": {
+        "filename": "boostx-1.21.11.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.21.11.jar",
+        "version": "1.2.0"
+      },
+      "26.1": {
+        "filename": "boostx-26.1.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-26.1.jar",
+        "version": "1.2.0"
+      },
+      "26.1.1": {
+        "filename": "boostx-26.1.1.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-26.1.1.jar",
+        "version": "1.2.0"
+      },
+      "26.2": {
+        "filename": "boostx-26.2.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-26.2.jar",
+        "version": "1.2.0"
+      },
+      "26.3": {
+        "filename": "boostx-26.3.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-26.3.jar",
         "version": "1.2.0"
       }
     },
     "forge": {
-      "1.20.4": {
-        "filename": "boostx-1.20.4.jar",
-        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/forge/boostx-1.20.4.jar",
+      "1.18": {
+        "filename": "boostx-1.18.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/forge/boostx-1.18.jar",
+        "version": "1.2.0"
+      },
+      "1.19": {
+        "filename": "boostx-1.19.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/forge/boostx-1.19.jar",
+        "version": "1.2.0"
+      },
+      "1.20": {
+        "filename": "boostx-1.20.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/forge/boostx-1.20.jar",
         "version": "1.2.0"
       },
       "1.20.1": {
@@ -54,14 +119,64 @@
         "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/forge/boostx-1.20.1.jar",
         "version": "1.2.0"
       },
-      "1.19.4": {
-        "filename": "boostx-1.19.4.jar",
-        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/forge/boostx-1.19.4.jar",
+      "1.20.2": {
+        "filename": "boostx-1.20.2.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/forge/boostx-1.20.2.jar",
         "version": "1.2.0"
       },
-      "1.18.2": {
-        "filename": "boostx-1.18.2.jar",
-        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/forge/boostx-1.18.2.jar",
+      "1.20.4": {
+        "filename": "boostx-1.20.4.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/forge/boostx-1.20.4.jar",
+        "version": "1.2.0"
+      },
+      "1.20.6": {
+        "filename": "boostx-1.20.6.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/forge/boostx-1.20.6.jar",
+        "version": "1.2.0"
+      },
+      "1.21.1": {
+        "filename": "boostx-1.21.1.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/forge/boostx-1.21.1.jar",
+        "version": "1.2.0"
+      },
+      "1.21.2": {
+        "filename": "boostx-1.21.2.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/forge/boostx-1.21.2.jar",
+        "version": "1.2.0"
+      },
+      "1.21.4": {
+        "filename": "boostx-1.21.4.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/forge/boostx-1.21.4.jar",
+        "version": "1.2.0"
+      },
+      "1.21.8": {
+        "filename": "boostx-1.21.8.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/forge/boostx-1.21.8.jar",
+        "version": "1.2.0"
+      },
+      "1.21.11": {
+        "filename": "boostx-1.21.11.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/forge/boostx-1.21.11.jar",
+        "version": "1.2.0"
+      },
+      "26.1": {
+        "filename": "boostx-26.1.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/forge/boostx-26.1.jar",
+        "version": "1.2.0"
+      },
+      "26.1.1": {
+        "filename": "boostx-26.1.1.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/forge/boostx-26.1.1.jar",
+        "version": "1.2.0"
+      },
+      "26.2": {
+        "filename": "boostx-26.2.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/forge/boostx-26.2.jar",
+        "version": "1.2.0"
+      },
+      "26.3": {
+        "filename": "boostx-26.3.jar",
+        "url": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/forge/boostx-26.3.jar",
         "version": "1.2.0"
       }
     }

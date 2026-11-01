@@ -2,14 +2,22 @@
   "version": "1.2.0",
   "updatedAt": "2026-11-01T04:55:00Z",
   "minecraftVersions": [
-    "1.21.6",
+    "26.3",
+    "26.2",
+    "26.1.1",
+    "26.1",
+    "1.21.11",
+    "1.21.8",
+    "1.21.4",
+    "1.21.2",
     "1.21.1",
     "1.20.6",
     "1.20.4",
+    "1.20.2",
     "1.20.1",
-    "1.19.4",
-    "1.19.2",
-    "1.18.2"
+    "1.20",
+    "1.19",
+    "1.18"
   ],
   "categories": {
     "performance": [
@@ -18,16 +26,31 @@
         "name": "BoostX Client Suite",
         "description": "All-in-one 100+ module FPS boost and HUD client mod",
         "versions": {
-          "1.20.4": "https://github.com/PromptGPTX/boostclient/releases/download/v1.2.0/boostx-1.20.4-fabric.jar",
-          "1.20.1": "https://github.com/PromptGPTX/boostclient/releases/download/v1.2.0/boostx-1.20.1-fabric.jar",
-          "1.21.1": "https://github.com/PromptGPTX/boostclient/releases/download/v1.2.0/boostx-1.21.1-fabric.jar"
+          "26.3": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-26.3.jar",
+          "26.2": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-26.2.jar",
+          "26.1.1": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-26.1.1.jar",
+          "26.1": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-26.1.jar",
+          "1.21.11": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.21.11.jar",
+          "1.21.8": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.21.8.jar",
+          "1.21.4": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.21.4.jar",
+          "1.21.2": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.21.2.jar",
+          "1.21.1": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.21.1.jar",
+          "1.20.6": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.20.6.jar",
+          "1.20.4": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.20.4.jar",
+          "1.20.2": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.20.2.jar",
+          "1.20.1": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.20.1.jar",
+          "1.20": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.20.jar",
+          "1.19": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.19.jar",
+          "1.18": "https://raw.githubusercontent.com/PromptGPTX/boostclient/main/mods/fabric/boostx-1.18.jar"
         }
       },
       {
         "id": "sodium",
         "name": "Sodium",
         "description": "Modern rendering engine replacement",
-        "dependencies": ["fabric-api"]
+        "dependencies": [
+          "fabric-api"
+        ]
       },
       {
         "id": "lithium",
@@ -55,7 +78,9 @@
         "id": "iris",
         "name": "Iris Shaders",
         "description": "Modern shader pack support with Sodium compatibility",
-        "dependencies": ["sodium"]
+        "dependencies": [
+          "sodium"
+        ]
       },
       {
         "id": "continuity",

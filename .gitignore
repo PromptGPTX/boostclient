@@ -5,6 +5,31 @@ node_modules/
 dist/
 dist-electron/
 dist-release/
+build/
+launcher/
+luncher/
+fastclient/
+fastclient_extracted/
+public/
+
+# Client proprietary source code (Private to local builds)
+src/
+electron/
+tsconfig.json
+tsconfig.electron.json
+vite.config.ts
+tailwind.config.js
+postcss.config.js
+package.json
+package-lock.json
+index.html
+
+# Internal markdown
+CHANGELOG.md
+CONTRIBUTING.md
+QUICKSTART.md
+STATUS.md
+VERIFY_BUILD.md
 
 # Logs & temp files
 *.log
