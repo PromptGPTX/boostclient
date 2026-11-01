@@ -98,83 +98,94 @@ export const WardrobeModal: React.FC<WardrobeModalProps> = ({
                 </div>
 
                 <div className="grid grid-cols-3 gap-4">
-                  {[1, 2, 3].map((slot) => (
-                    <div
-                      key={slot}
-                      onClick={() => setActiveSlot(slot)}
-                      className={`relative aspect-[3/4] rounded-2xl border-2 p-3 flex flex-col justify-between cursor-pointer transition ${
-                        activeSlot === slot
-                          ? 'border-orange-500 bg-orange-500/10'
-                          : 'border-gray-800 bg-gray-950/40 hover:border-gray-700'
-                      }`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-bold text-gray-400">Slot {slot}</span>
-                        {activeSlot === slot && (
-                          <div className="w-5 h-5 rounded-full bg-orange-500 flex items-center justify-center text-white">
-                            <Check className="w-3 h-3 stroke-[3]" />
-                          </div>
-                        )}
-                      </div>
-
-                      <div className="flex-1 flex items-center justify-center my-2">
-                        <div className="w-16 h-28 bg-gray-900 rounded-lg flex items-center justify-center border border-gray-800">
-                          <span className="text-2xl text-gray-700">👤</span>
+                  {[1, 2, 3].map((slot) => {
+                    const isSelected = activeSlot === slot;
+                    return (
+                      <div
+                        key={slot}
+                        onClick={() => setActiveSlot(slot)}
+                        className={`bg-gray-800/30 rounded-2xl border p-4 flex flex-col items-center gap-3 cursor-pointer transition ${
+                          isSelected
+                            ? 'border-orange-500 shadow-lg shadow-orange-500/10'
+                            : 'border-gray-700/50 hover:border-gray-600'
+                        }`}
+                      >
+                        <div className="w-full flex items-center justify-between">
+                          <span className="text-xs font-bold text-gray-400">SLOT {slot}</span>
+                          {isSelected && <Check className="w-4 h-4 text-orange-500" />}
                         </div>
+
+                        <div className="w-full aspect-square bg-gray-900/50 rounded-xl border border-dashed border-gray-700/50 flex items-center justify-center">
+                          <Upload className="w-8 h-8 text-gray-600" />
+                        </div>
+
+                        <button className="w-full py-2 bg-gray-700/50 hover:bg-orange-600 rounded-xl text-white font-semibold text-xs flex items-center justify-center gap-2 transition">
+                          <Upload className="w-3.5 h-3.5" />
+                          Upload
+                        </button>
                       </div>
-
-                      <button className="w-full py-2 rounded-xl bg-gray-800 hover:bg-gray-700 text-xs font-bold text-white flex items-center justify-center gap-1.5 transition">
-                        <Upload className="w-3.5 h-3.5" />
-                        Upload
-                      </button>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="p-4 bg-orange-500/10 border border-orange-500/20 rounded-2xl">
-                  <div className="flex items-start gap-3">
-                    <span className="text-orange-500 text-lg">💡</span>
-                    <p className="text-xs text-orange-200/80 leading-relaxed">
-                      Skins uploaded here are synced across multiplayer for all users playing with BoostClient and BoostX mod.
-                    </p>
-                  </div>
+                    );
+                  })}
                 </div>
               </>
             ) : (
               <>
                 <div>
-                  <h3 className="text-lg font-bold text-white mb-1">Capes & Animated Capes</h3>
+                  <h3 className="text-lg font-bold text-white mb-1">Cape library</h3>
                   <p className="text-xs text-gray-400">
-                    Choose an official BoostClient cape or import an animated GIF cape.
+                    Select a cape or upload a custom one. Animated GIF capes are supported!
                   </p>
                 </div>
 
-                <div className="grid grid-cols-4 gap-3">
-                  {['None', 'Creeper', 'Angel', 'Dragon', 'Rainbow', 'Fire', 'Heart', 'Star'].map((cape) => (
-                    <div
-                      key={cape}
-                      className="aspect-square bg-gray-950/40 border border-gray-800 rounded-xl p-3 flex flex-col items-center justify-between hover:border-orange-500/50 cursor-pointer transition"
-                    >
-                      <span className="text-xs font-bold text-gray-400">{cape}</span>
-                      <span className="text-2xl">
-                        {cape === 'None' ? '🚫' : cape === 'Creeper' ? '🌿' : cape === 'Angel' ? '👼' : cape === 'Dragon' ? '🐉' : cape === 'Rainbow' ? '🌈' : cape === 'Fire' ? '🔥' : cape === 'Heart' ? '❤️' : '⭐'}
-                      </span>
-                      <button className="w-full py-1 rounded-lg bg-gray-800 text-[10px] font-bold text-gray-300 hover:bg-orange-600 hover:text-white transition">
-                        Equip
-                      </button>
-                    </div>
-                  ))}
+                {/* Drop Zone */}
+                <div className="border-2 border-dashed border-gray-700/50 rounded-2xl p-8 flex flex-col items-center justify-center gap-2 bg-gray-800/20 hover:border-orange-500/50 transition cursor-pointer">
+                  <Upload className="w-8 h-8 text-gray-500" />
+                  <p className="text-sm font-semibold text-gray-300">
+                    Drop cape files here or click 'Import Cape'
+                  </p>
+                  <p className="text-xs text-gray-500">Supports PNG and GIF</p>
                 </div>
 
-                <div className="pt-2">
-                  <button className="w-full py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-orange-500/20 transition">
-                    <Upload className="w-4 h-4" />
-                    Upload Custom Cape (GIF / PNG)
-                  </button>
+                {/* Default Capes Grid */}
+                <div>
+                  <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">
+                    Default Capes
+                  </h4>
+                  <div className="grid grid-cols-6 gap-3">
+                    {['Creeper', 'Angel', 'Dragon', 'Rainbow', 'Fire', 'Heart'].map((cape) => (
+                      <div
+                        key={cape}
+                        className="aspect-[3/4] bg-gray-800/40 rounded-xl border border-gray-700/50 hover:border-orange-500 p-2 flex flex-col items-center justify-between cursor-pointer transition group"
+                      >
+                        <div className="flex-1 flex items-center justify-center text-3xl">
+                          {cape === 'Creeper' ? '🌿' : cape === 'Angel' ? '👼' : cape === 'Dragon' ? '🐉' : cape === 'Rainbow' ? '🌈' : cape === 'Fire' ? '🔥' : '❤️'}
+                        </div>
+                        <span className="text-[10px] font-semibold text-gray-400 group-hover:text-white truncate">
+                          {cape}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </>
             )}
           </div>
+        </div>
+
+        {/* Footer */}
+        <div className="p-6 border-t border-gray-800 flex justify-end gap-3">
+          <button
+            onClick={onClose}
+            className="px-6 py-2.5 rounded-xl bg-gray-800 hover:bg-gray-700 text-white font-semibold text-sm transition"
+          >
+            Cancel
+          </button>
+          <button
+            onClick={onClose}
+            className="px-8 py-2.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-semibold text-sm transition shadow-lg shadow-orange-600/30"
+          >
+            Done
+          </button>
         </div>
       </div>
     </div>

@@ -34,6 +34,8 @@ export class UpdateManager {
   }
 
   private loadCurrentVersion(): CurrentVersion {
+    // In production, read package.json build version
+    // For now, use static info
     try {
       const pkgPath = path.join(__dirname, '../../package.json');
       if (fs.existsSync(pkgPath)) {
@@ -94,6 +96,7 @@ export class UpdateManager {
 
       const isNewer = this.compareVersions(latest, current) > 0;
 
+      // Check if release is marked as critical (in body or tag includes 'critical')
       const isCritical = release.body?.toLowerCase().includes('critical') ||
                          release.tag_name.toLowerCase().includes('critical') ||
                          release.prerelease === false;
@@ -118,11 +121,14 @@ export class UpdateManager {
 
   public async performUpdate(): Promise<{ success: boolean; message: string }> {
     try {
+      // For now, we provide guidance for user
+      // In production, integrate electron-updater or similar
       const check = await this.checkForUpdates();
       if (!check.releaseInfo) {
         return { success: false, message: 'No release information available' };
       }
 
+      // Store update info for UI to handle download
       const updateInfo = {
         currentVersion: this.currentVersionInfo.version,
         latestVersion: check.latestVersion,
@@ -144,11 +150,17 @@ export class UpdateManager {
     }
   }
 
+  /**
+   * Check if there is a pending update
+   */
   public hasPendingUpdate(): boolean {
     const updatesFile = path.join(this.configStore.getDataDir(), 'pending_update.json');
     return fs.existsSync(updatesFile);
   }
 
+  /**
+   * Get pending update info
+   */
   public getPendingUpdate(): any {
     const updatesFile = path.join(this.configStore.getDataDir(), 'pending_update.json');
     if (fs.existsSync(updatesFile)) {
@@ -161,6 +173,9 @@ export class UpdateManager {
     return null;
   }
 
+  /**
+   * Clear pending update
+   */
   public clearPendingUpdate(): void {
     const updatesFile = path.join(this.configStore.getDataDir(), 'pending_update.json');
     if (fs.existsSync(updatesFile)) {
@@ -168,10 +183,16 @@ export class UpdateManager {
     }
   }
 
+  /**
+   * Parse semantic version
+   */
   private parseVersion(version: string): number[] {
     return version.split('.').map(v => parseInt(v, 10) || 0);
   }
 
+  /**
+   * Compare two semantic versions
+   */
   private compareVersions(a: number[], b: number[]): number {
     for (let i = 0; i < Math.max(a.length, b.length); i++) {
       const av = a[i] || 0;
@@ -182,6 +203,9 @@ export class UpdateManager {
     return 0;
   }
 
+  /**
+   * Get current version info
+   */
   public getVersion(): CurrentVersion {
     return this.currentVersionInfo;
   }

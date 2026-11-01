@@ -178,6 +178,9 @@ export class BoostXManager {
     return BOOSTX_MODULES_CATALOG;
   }
 
+  /**
+   * Ensures the boostx mod jar and default config exist in the profile
+   */
   public async ensureBoostXMod(profileId: string): Promise<string> {
     const profilesDir = this.configStore.getProfilesDir();
     const profileFolder = path.join(profilesDir, profileId);
@@ -190,10 +193,12 @@ export class BoostXManager {
     const modFilename = 'boostx-1.0.0.jar';
     const modFilePath = path.join(modsDir, modFilename);
 
+    // Create a valid Fabric mod .jar for BoostX if not present
     if (!fs.existsSync(modFilePath)) {
       this.createBoostXJar(modFilePath);
     }
 
+    // Ensure default config json
     const configFile = path.join(configDir, 'config.json');
     if (!fs.existsSync(configFile)) {
       const defaultModules: Record<string, any> = {};
@@ -215,6 +220,9 @@ export class BoostXManager {
     return modFilePath;
   }
 
+  /**
+   * Creates a valid Fabric mod .jar file containing fabric.mod.json and mod metadata
+   */
   private createBoostXJar(targetPath: string): void {
     try {
       const zip = new AdmZip();
@@ -248,6 +256,7 @@ export class BoostXManager {
       zip.addFile('fabric.mod.json', Buffer.from(JSON.stringify(fabricModJson, null, 2), 'utf-8'));
       zip.addFile('pack.mcmeta', Buffer.from(JSON.stringify({ pack: { pack_format: 9, description: 'BoostX Client Resources' } }, null, 2), 'utf-8'));
 
+      // Write zip file as .jar
       zip.writeZip(targetPath);
       console.log('[BoostXManager] Created BoostX mod jar at:', targetPath);
     } catch (err) {
@@ -267,6 +276,7 @@ export class BoostXManager {
       console.error('Failed to read BoostX config:', err);
     }
 
+    // Default fallback
     const defaultModules: Record<string, any> = {};
     for (const mod of BOOSTX_MODULES_CATALOG) {
       defaultModules[mod.id] = { enabled: mod.enabled, hotkey: mod.hotkey, settings: mod.settings || {} };

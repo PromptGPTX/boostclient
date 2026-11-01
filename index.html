@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BoostClient</title>
+    <!-- Content Security Policy for Electron desktop app -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https: data:; img-src 'self' data: https: blob:; connect-src 'self' https: http://127.0.0.1:* ws://127.0.0.1:*;" />
+  </head>
+  <body class="bg-[#16191c] text-gray-100 select-none overflow-hidden antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

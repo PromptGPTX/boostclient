@@ -121,6 +121,7 @@ export const AccountView: React.FC<AccountViewProps> = ({
             </p>
 
             <div className="grid grid-cols-4 gap-3">
+              {/* Default Capes */}
               {['None', 'Creeper', 'Angel', 'Dragon', 'Rainbow', 'Fire', 'Heart', 'Star'].map((cape) => (
                 <button
                   key={cape}

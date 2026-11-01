@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Production and distribution builds
+dist/
+dist-electron/
+dist-release/
+
+# Logs & temp files
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
